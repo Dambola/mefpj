@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="p5js/p5.js"></script>
+    <script src="p5js/p5.sound.min.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+    </main>
+    
+    <script src="lib/vec2.js"></script>
+    <script src="lib/mat3.js"></script>
+    <script src="lib/sat.js"></script>
+    <script src="lib/tri.js"></script>
+    <script src="lib/quad.js"></script>
+    <script src="lib/wrappers.js"></script>
+    <script src="sketch.js"></script>
+
+    <hr>
+
+    <div style="padding-left: 20px;">
+      <label>All:</label>
+      <button onclick="mouseClickedFunc=null; mouseClickedFuncArg=null;">Limpar Comandos</button>
+      <button id="ident" onclick="clickMouseTracker();">Ligar Identificador de Objetos</button>
+    </div>
+
+    <hr>
+
+    <small>Objeto 1:</small>
+    <div style="padding-left: 20px;">
+      <label>Involucro:</label>
+      <button onclick="loadWrapper(0, AABB); event.stopPropagation();">AABB</button>
+      <button onclick="loadWrapper(0, OBB); event.stopPropagation();">OBB</button>
+      <button onclick="loadWrapper(0, Circle); event.stopPropagation();">Circle</button>
+      <button onclick="loadWrapper(0, Wrapper); event.stopPropagation();">Empty</button>
+      <label>Commandos:</label>
+      <button onclick="mouseClickedFunc=addPonto; mouseClickedFuncArg=0; event.stopPropagation();">Adicionar Ponto</button>
+      <button onclick="delPonto(0); mouseClickedFunc=null; mouseClickedFuncArg=null;">Remover Ponto</button>
+      <button onclick="clsPonto(0); mouseClickedFunc=null; mouseClickedFuncArg=null;">Limpar Ponto</button>
+    </div>
+
+    <hr>
+
+    <small>Objeto 2:</small>
+    <div style="padding-left: 20px;">
+      <label>Involucro:</label>
+      <button onclick="loadWrapper(1, AABB); event.stopPropagation();">AABB</button>
+      <button onclick="loadWrapper(1, OBB); event.stopPropagation();">OBB</button>
+      <button onclick="loadWrapper(1, Circle); event.stopPropagation();">Circle</button>
+      <button onclick="loadWrapper(1, Wrapper); event.stopPropagation();">Empty</button>
+      <label>Commandos:</label>
+      <button onclick="mouseClickedFunc=addPonto; mouseClickedFuncArg=1; event.stopPropagation();">Adicionar Ponto</button>
+      <button onclick="delPonto(1); mouseClickedFunc=null; mouseClickedFuncArg=null;">Remover Ponto</button>
+      <button onclick="clsPonto(1); mouseClickedFunc=null; mouseClickedFuncArg=null;">Limpar Ponto</button>
+    </div>
+    
+    <hr>
+
+    <h4 id="info"></h4>
+    <h4 id="mouse"></h4>
+
+    <p>
+      OBS.: A implementação de saber se um ponto está dentro do objeto está implementado como o identificador, ativa clicando no botão.
+    </p>
+    <p>
+      OBS.: Apenas as colisões AABB-Esfera e OBB-Esfera não estão implementadas.
+    </p>
+  </body>
+</html>
